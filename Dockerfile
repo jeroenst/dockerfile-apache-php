@@ -49,8 +49,7 @@ RUN apt update -q && apt install -yqq --force-yes \
     php7.4-intl
 
 # Mysql packages
-RUN apt update -q && apt install -yqq --force-yes \
-    php-mysql
+RUN docker-php-ext-install pdo_mysql
 
 # Apache mods
 RUN a2enmod rewrite expires headers
